@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Apptivate">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="Apptivate">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2f6bff"/>
+    <linearGradient id="g" x1="4" y1="28" x2="28" y2="4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f6bff"/>
       <stop offset="1" stop-color="#6a5cff"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <text x="32" y="44" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="700" fill="#fff">A</text>
+  <rect width="32" height="32" rx="9" fill="url(#g)"/>
+  <path d="M8.2 23.6 L16 8.4 L23.8 23.6" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11.4 17.4 H20.6" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="16" cy="17.4" r="2.15" fill="#fff"/>
+  <circle cx="16" cy="17.4" r="0.85" fill="#3d5bff"/>
 </svg>
