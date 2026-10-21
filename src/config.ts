@@ -5,7 +5,7 @@ export const siteConfig = {
   title: "Apptivate — Fractional CTO & product build for UK startups",
   description:
     "Senior engineering leadership for UK startups: fractional CTO, AI/LLM integration, and a cost-effective Chennai delivery team led from London.",
-  bookingUrl: "{{BOOKING_URL}}",
+  bookingUrl: "https://calendly.com/ajayprabsp",
   contactEmail: "info@apptivate.uk",
   formEndpoint: "{{FORM_ENDPOINT}}",
   companyNumber: "{{COMPANY_NUMBER}}",
