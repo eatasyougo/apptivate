@@ -22,30 +22,92 @@ const steps = [
   <div class="container">
     <p class="eyebrow">Engagement</p>
     <h2>How it works</h2>
-    <div class="grid-3" style="margin-top: 2rem;">
+    <ol class="steps">
       {
         steps.map((step) => (
-          <article class="card">
-            <span class="n">{step.n}</span>
+          <li class="reveal">
+            <span class="badge">{step.n}</span>
             <h3>{step.title}</h3>
             <p>{step.body}</p>
-          </article>
+          </li>
         ))
       }
-    </div>
+    </ol>
   </div>
 </section>
 
 <style>
-  .n {
-    display: block;
-    font-weight: 800;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.08em;
+  .steps {
+    list-style: none;
+    margin: 2.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  .steps::before {
+    content: "";
+    position: absolute;
+    left: 1.15rem;
+    top: 1.15rem;
+    bottom: 1.15rem;
+    width: 1px;
+    background: var(--line);
+  }
+
+  li {
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  .badge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: #fff;
+    background: var(--accent-grad);
+    box-shadow: 0 0 0 4px var(--surface);
+    z-index: 1;
   }
 
   h3 {
     font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+
+  @media (min-width: 720px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .steps::before {
+      left: 12%;
+      right: 12%;
+      top: 1.15rem;
+      bottom: auto;
+      width: auto;
+      height: 1px;
+    }
+
+    li {
+      padding-left: 0;
+      padding-top: 3.4rem;
+      text-align: center;
+    }
+
+    .badge {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 </style>

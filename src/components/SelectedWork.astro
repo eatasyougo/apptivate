@@ -1,9 +1,17 @@
 ---
 import { Image } from "astro:assets";
+import { siteConfig } from "../config";
 import velocity from "../assets/work/velocity.png";
 import icelandTours from "../assets/work/iceland-tours.png";
 import designtorget from "../assets/work/designtorget.png";
 import ecshopping from "../assets/work/ecshopping.png";
+import BrowserFrame from "./BrowserFrame.astro";
+
+const earlier = [
+  { src: icelandTours, alt: "Iceland Tours booking website", caption: "Iceland Tours" },
+  { src: designtorget, alt: "DesignTorget product page", caption: "DesignTorget" },
+  { src: ecshopping, alt: "Icelandic e-commerce product page", caption: "ecShopping" },
+];
 ---
 
 <section class="section" id="work">
@@ -11,60 +19,75 @@ import ecshopping from "../assets/work/ecshopping.png";
     <p class="eyebrow">Portfolio</p>
     <h2>Selected work</h2>
 
-    <article class="card case">
-      <Image
-        src={velocity}
-        alt="Citi Velocity: FX prices, liquidity heatmaps, charts and an order blotter."
-        width={975}
-        height={652}
-        loading="lazy"
-      />
+    <article class="case reveal">
+      <BrowserFrame title="Citi Velocity">
+        <Image
+          src={velocity}
+          alt="Citi Velocity: FX prices, liquidity heatmaps, charts and an order blotter."
+          width={975}
+          height={652}
+          loading="lazy"
+        />
+      </BrowserFrame>
       <div>
         <h3>Citi Velocity</h3>
+        <p class="impact">Globally deployed to commodities and FX trading desks.</p>
         <p>
-          A globally deployed commodities and FX trading platform. I contributed to migrating the
-          client-facing desktop/web hybrid to a pure web application using React, Recoil, WAMP and Python.
+          I contributed to migrating the client-facing desktop/web hybrid to a pure web application
+          using React, Recoil, WAMP and Python.
         </p>
+        <ul class="pills">
+          <li>React</li>
+          <li>Recoil</li>
+          <li>WAMP</li>
+          <li>Python</li>
+        </ul>
       </div>
     </article>
 
-    <article class="card case-text">
+    <article class="card case-text reveal">
       <h3>Virtuetech — AI financial-products platform</h3>
+      <p class="impact">Natural-language querying over structured financial data.</p>
       <p>
-        Natural-language querying and conversational grid customisation over structured financial data.
-        React, TypeScript, MUI and AG Grid on the front end; a Node/Express BFF; Elasticsearch and RAG
-        to connect user intent with product, trade and lifecycle data.
+        Conversational grid customisation, product and trade lifecycle, a Node/Express BFF, and RAG
+        so users can ask for what they need in plain language.
       </p>
+      <ul class="pills">
+        <li>React</li>
+        <li>TypeScript</li>
+        <li>AG Grid</li>
+        <li>Node BFF</li>
+        <li>Elasticsearch</li>
+        <li>RAG</li>
+      </ul>
     </article>
 
     <div class="earlier">
       <p>20 years of delivery — selected earlier web &amp; e-commerce work</p>
-      <div class="thumbs">
-        <Image src={icelandTours} alt="Iceland Tours booking website" width={487} height={512} loading="lazy" />
-        <Image src={designtorget} alt="DesignTorget product page" width={483} height={663} loading="lazy" />
-        <Image src={ecshopping} alt="Icelandic e-commerce product page" width={487} height={598} loading="lazy" />
+      <div class="scroller">
+        {
+          earlier.map((item) => (
+            <figure>
+              <Image src={item.src} alt={item.alt} width={487} height={512} loading="lazy" />
+              <figcaption>{item.caption}</figcaption>
+            </figure>
+          ))
+        }
       </div>
     </div>
+
+    <p class="soft-cta">
+      Want something like this for your product? <a href={siteConfig.bookingUrl} target="_blank" rel="noopener">Book a call →</a>
+    </p>
   </div>
 </section>
 
 <style>
   .case {
     display: grid;
-    gap: 1.25rem;
-    overflow: hidden;
-    padding: 0;
+    gap: 1.5rem;
     margin-top: 2rem;
-  }
-
-  .case img {
-    width: 100%;
-    height: auto;
-  }
-
-  .case > div,
-  .case-text {
-    padding: 1.5rem;
+    align-items: center;
   }
 
   .case-text {
@@ -79,32 +102,71 @@ import ecshopping from "../assets/work/ecshopping.png";
     margin-top: 2.5rem;
   }
 
-  .earlier p {
+  .earlier > p {
     font-size: 0.9rem;
     margin-bottom: 0.85rem;
   }
 
-  .thumbs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    opacity: 0.72;
+  .scroller {
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    scroll-snap-type: x mandatory;
   }
 
-  .thumbs img {
+  figure {
+    margin: 0;
+    flex: 0 0 14rem;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  figure img {
     width: 100%;
-    height: 7.5rem;
+    height: 8rem;
     object-fit: cover;
     object-position: top;
     border-radius: 10px;
     border: 1px solid var(--line);
-    filter: grayscale(0.35);
+    filter: grayscale(0.4);
+    opacity: 0.8;
+    transition: filter 160ms ease, opacity 160ms ease;
+  }
+
+  figcaption {
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    background: rgba(11, 18, 32, 0.78);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 160ms ease;
+  }
+
+  figure:hover img,
+  figure:focus-within img {
+    filter: none;
+    opacity: 1;
+  }
+
+  figure:hover figcaption,
+  figure:focus-within figcaption {
+    opacity: 1;
   }
 
   @media (min-width: 720px) {
     .case {
-      grid-template-columns: 1.3fr 1fr;
-      align-items: center;
+      grid-template-columns: 1.25fr 1fr;
+    }
+
+    figure {
+      flex-basis: 18rem;
     }
   }
 </style>

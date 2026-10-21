@@ -1,0 +1,50 @@
+---
+import { siteConfig } from "../config";
+---
+
+<div class="mobile-cta" id="mobile-cta" hidden>
+  <a class="btn btn-primary" href={siteConfig.bookingUrl} target="_blank" rel="noopener">Book a call</a>
+</div>
+
+<script>
+  const bar = document.querySelector("#mobile-cta") as HTMLElement | null;
+  const hero = document.querySelector("#top");
+  if (bar && hero && window.matchMedia("(max-width: 719px)").matches) {
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        bar.hidden = entry.isIntersecting;
+      },
+      { threshold: 0.15 },
+    );
+    io.observe(hero);
+  }
+</script>
+
+<style>
+  .mobile-cta {
+    display: none;
+  }
+
+  @media (max-width: 719px) {
+    .mobile-cta {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 30;
+      padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom));
+      background: rgba(11, 18, 32, 0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-cta .btn {
+      width: 100%;
+    }
+
+    .mobile-cta[hidden] {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section class="band" aria-labelledby="cta-band-heading">
+  <div class="container inner">
+    <div>
+      <h2 id="cta-band-heading">Building something? Let’s talk.</h2>
+      <p>A free 30-minute intro call. Senior direction from London, a team ready to build.</p>
+    </div>
+    <a class="btn btn-on-grad" href={siteConfig.bookingUrl} target="_blank" rel="noopener">Book a free intro call</a>
+  </div>
+</section>
+
+<style>
+  .band {
+    background: var(--accent-grad);
+    color: #fff;
+    padding: 3rem 0;
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  h2 {
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 36rem;
+  }
+
+  .btn-on-grad {
+    background: #fff;
+    color: #1f3fbf;
+    box-shadow: 0 8px 24px rgba(11, 18, 32, 0.18);
+  }
+
+  .btn-on-grad:hover {
+    background: #f3f6ff;
+    color: #1633a8;
+  }
+</style>

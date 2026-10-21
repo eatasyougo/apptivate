@@ -3,6 +3,7 @@
     <div>
       <p class="eyebrow">About</p>
       <h2>Ajay Prince</h2>
+      <p class="pull">Senior judgement. A team that ships.</p>
       <p>
         I've spent 20 years building trading, risk and investment systems at BNP Paribas, Man Group
         and Citi — including a VP role on Citi Velocity — and I now work on AI-enabled financial
@@ -14,9 +15,17 @@
         hands-on AI and LLM integration. Delivery is led from the UK and built with a trusted team
         in Chennai, so you get senior direction and a cost-effective build.
       </p>
+      <ul class="creds">
+        <li><strong>20+ years</strong> engineering</li>
+        <li>ex-Citi, Man Group, BNP Paribas</li>
+        <li>London, UK</li>
+      </ul>
     </div>
     <div class="photo" aria-hidden="true">
-      <span>Photo to follow</span>
+      <span class="ring">
+        <span class="initials">AP</span>
+      </span>
+      <p>Photo to follow</p>
     </div>
   </div>
 </section>
@@ -27,15 +36,63 @@
     gap: 2rem;
   }
 
-  .photo {
-    min-height: 14rem;
-    border: 1px dashed var(--line);
-    border-radius: var(--radius);
+  .pull {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+  }
+
+  .creds {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+  }
+
+  .creds li {
     background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .photo {
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 0.75rem;
+  }
+
+  .photo p {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .ring {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    padding: 4px;
+    background: var(--accent-grad);
+    box-shadow: 0 16px 40px rgba(47, 107, 255, 0.25);
+    display: grid;
+  }
+
+  .initials {
     display: grid;
     place-items: center;
-    color: var(--muted);
-    font-size: 0.9rem;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
   }
 
   @media (min-width: 720px) {
