@@ -1,4 +1,4 @@
-// TODO: replace remaining placeholders before go-live (see BUILD_SPEC.md §13).
+// Booking, email, form, and company number are set. See BUILD_SPEC.md §13.
 export const siteConfig = {
   name: "Apptivate",
   legalName: "Apptivate Ltd",
@@ -8,6 +8,6 @@ export const siteConfig = {
   bookingUrl: "https://calendly.com/ajayprabsp",
   contactEmail: "info@apptivate.uk",
   formEndpoint: "https://formspree.io/f/mjygnjbl",
-  companyNumber: "{{COMPANY_NUMBER}}",
+  companyNumber: "09654478",
   canonical: "https://apptivate.uk/",
 } as const;
