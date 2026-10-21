@@ -4,16 +4,7 @@ import { siteConfig } from "../config";
 import velocity from "../assets/work/velocity.png";
 import brokeflyer from "../assets/work/brokeflyer.png";
 import virtuetech from "../assets/work/virtuetech.jpg";
-import icelandTours from "../assets/work/iceland-tours.png";
-import designtorget from "../assets/work/designtorget.png";
-import ecshopping from "../assets/work/ecshopping.png";
 import BrowserFrame from "./BrowserFrame.astro";
-
-const earlier = [
-  { src: icelandTours, alt: "Iceland Tours booking website", caption: "Iceland Tours" },
-  { src: designtorget, alt: "DesignTorget product page", caption: "DesignTorget" },
-  { src: ecshopping, alt: "Icelandic e-commerce product page", caption: "ecShopping" },
-];
 ---
 
 <section class="section" id="work">
@@ -109,20 +100,6 @@ const earlier = [
       </div>
     </article>
 
-    <div class="earlier">
-      <p>20 years of delivery — selected earlier web &amp; e-commerce work</p>
-      <div class="scroller">
-        {
-          earlier.map((item) => (
-            <figure>
-              <Image src={item.src} alt={item.alt} width={640} height={400} loading="lazy" />
-              <figcaption>{item.caption}</figcaption>
-            </figure>
-          ))
-        }
-      </div>
-    </div>
-
     <p class="soft-cta">
       Want something like this for your product? <a href={siteConfig.bookingUrl} target="_blank" rel="noopener">Book a call →</a>
     </p>
@@ -183,65 +160,8 @@ const earlier = [
     text-decoration: underline;
   }
 
-  .earlier {
-    margin-top: 2.75rem;
-  }
-
-  .earlier > p {
-    font-size: 0.9rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .scroller {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-
-  figure {
-    margin: 0;
-    min-width: 0;
-    position: relative;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-  }
-
-  figure :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    filter: grayscale(0.4);
-    opacity: 0.85;
-    transition: filter 160ms ease, opacity 160ms ease;
-  }
-
-  figcaption {
-    position: absolute;
-    left: 0.5rem;
-    right: 0.5rem;
-    bottom: 0.5rem;
-    background: rgba(11, 18, 32, 0.78);
-    color: #fff;
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 0.25rem 0.5rem;
-    border-radius: 8px;
-    opacity: 0;
-    transition: opacity 160ms ease;
-  }
-
-  figure:hover :global(img),
-  figure:focus-within :global(img) {
-    filter: none;
-    opacity: 1;
-  }
-
-  figure:hover figcaption,
-  figure:focus-within figcaption {
-    opacity: 1;
+  .soft-cta {
+    margin-top: 2.25rem;
   }
 
   @media (min-width: 800px) {
@@ -252,10 +172,6 @@ const earlier = [
 
     .case-flip > .media {
       order: 2;
-    }
-
-    .scroller {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
