@@ -1,24 +1,28 @@
 ---
 const quotes = [
   {
-    text: "TODO: replace with a real testimonial from a founder you’ve helped.",
-    name: "TODO — Name",
-    role: "Founder, stealth fintech",
+    text: "Ajay has the rare ability to deliver technical solutions, whilst building strong relationships with key business stakeholders.",
+    name: "Paul Garrett",
+    role: "CEO, Radley James",
   },
   {
-    text: "TODO: a second short quote on senior guidance, delivery, or AI work.",
-    name: "TODO — Name",
-    role: "CTO, seed-stage SaaS",
+    text: "Not just a manager but a mentor. His strategic insights helped streamline operations and enhance our product offerings as we grew from a small startup.",
+    name: "Hari Pravin M J G",
+    role: "Solution Architect · worked together at ecSoftware",
+  },
+  {
+    text: "A friendly and collaborative team player, an excellent problem-solver, and always willing to keep up with the latest tech. I would not hesitate to recommend him.",
+    name: "Schalk Pienaar",
+    role: "Software Engineer & Architect · Commerzbank",
   },
 ];
 ---
 
 <section class="section section--surface" id="testimonials" aria-labelledby="quotes-heading">
   <div class="container">
-    <p class="eyebrow">What founders say</p>
-    <h2 id="quotes-heading">Testimonials</h2>
-    <p class="note">Placeholder quotes — swap in real names and words when you have them.</p>
-    <div class="grid-2" style="margin-top: 1.5rem;">
+    <p class="eyebrow">Recommendations</p>
+    <h2 id="quotes-heading">What colleagues say</h2>
+    <div class="grid-3" style="margin-top: 1.5rem;">
       {
         quotes.map((q) => (
           <blockquote class="card quote reveal">
@@ -36,10 +40,6 @@ const quotes = [
 </section>
 
 <style>
-  .note {
-    font-size: 0.9rem;
-  }
-
   .quote {
     padding: 2rem 1.5rem 1.5rem;
   }
@@ -58,8 +58,8 @@ const quotes = [
 
   .quote p {
     font-family: var(--font-display);
-    font-size: 1.2rem;
-    line-height: 1.4;
+    font-size: 1.05rem;
+    line-height: 1.45;
     color: var(--ink);
     letter-spacing: -0.02em;
   }
@@ -77,6 +77,6 @@ const quotes = [
 
   footer span {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 </style>
