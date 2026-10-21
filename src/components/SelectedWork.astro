@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { siteConfig } from "../config";
 import velocity from "../assets/work/velocity.png";
+import brokeflyer from "../assets/work/brokeflyer.png";
 import icelandTours from "../assets/work/iceland-tours.png";
 import designtorget from "../assets/work/designtorget.png";
 import ecshopping from "../assets/work/ecshopping.png";
@@ -23,7 +24,7 @@ const earlier = [
       <BrowserFrame title="Citi Velocity">
         <Image
           src={velocity}
-          alt="Citi Velocity: FX prices, liquidity heatmaps, charts and an order blotter."
+          alt="Citi Velocity commodities trading platform with prices, charts and an order blotter."
           width={975}
           height={652}
           loading="lazy"
@@ -31,7 +32,7 @@ const earlier = [
       </BrowserFrame>
       <div>
         <h3>Citi Velocity</h3>
-        <p class="impact">Globally deployed to commodities and FX trading desks.</p>
+        <p class="impact">Globally deployed commodities trading platform.</p>
         <p>
           I contributed to migrating the client-facing desktop/web hybrid to a pure web application
           using React, Recoil, WAMP and Python.
@@ -41,6 +42,32 @@ const earlier = [
           <li>Recoil</li>
           <li>WAMP</li>
           <li>Python</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="case case-flip reveal">
+      <BrowserFrame title="brokeflyer.com">
+        <Image
+          src={brokeflyer}
+          alt="BrokeFlyer: cheap flight deals from London, with live deal cards and trip tools."
+          width={1280}
+          height={800}
+          loading="lazy"
+        />
+      </BrowserFrame>
+      <div>
+        <h3>BrokeFlyer</h3>
+        <p class="impact">My own product — live at <a href="https://brokeflyer.com" target="_blank" rel="noopener">brokeflyer.com</a>.</p>
+        <p>
+          A flight-deals site that finds cheap fares from London. Still being built, but it works for
+          the most part: live deals, trip tools, and an end-to-end product I designed, shipped and run.
+          The clearest proof I can take something from idea to production, not only contribute inside a bank.
+        </p>
+        <ul class="pills">
+          <li>Founder-built</li>
+          <li>Live product</li>
+          <li>Work in progress</li>
         </ul>
       </div>
     </article>
@@ -92,6 +119,16 @@ const earlier = [
 
   .case-text {
     margin-top: 1.25rem;
+  }
+
+  .case a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .case a:hover {
+    text-decoration: underline;
   }
 
   h3 {
@@ -160,6 +197,14 @@ const earlier = [
   @media (min-width: 720px) {
     .case {
       grid-template-columns: 1.25fr 1fr;
+    }
+
+    .case-flip {
+      grid-template-columns: 1fr 1.25fr;
+    }
+
+    .case-flip > :first-child {
+      order: 2;
     }
 
     .scroller {
