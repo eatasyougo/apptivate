@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { siteConfig } from "../config";
 import velocity from "../assets/work/velocity.png";
 import brokeflyer from "../assets/work/brokeflyer.png";
+import virtuetech from "../assets/work/virtuetech.jpg";
 import icelandTours from "../assets/work/iceland-tours.png";
 import designtorget from "../assets/work/designtorget.png";
 import ecshopping from "../assets/work/ecshopping.png";
@@ -21,16 +22,18 @@ const earlier = [
     <h2>Selected work</h2>
 
     <article class="case reveal">
-      <BrowserFrame title="Citi Velocity">
-        <Image
-          src={velocity}
-          alt="Citi Velocity commodities trading platform with prices, charts and an order blotter."
-          width={975}
-          height={652}
-          loading="lazy"
-        />
-      </BrowserFrame>
-      <div>
+      <div class="media">
+        <BrowserFrame title="Citi Velocity">
+          <Image
+            src={velocity}
+            alt="Citi Velocity commodities trading platform with prices, charts and an order blotter."
+            width={1280}
+            height={800}
+            loading="lazy"
+          />
+        </BrowserFrame>
+      </div>
+      <div class="copy">
         <h3>Citi Velocity</h3>
         <p class="impact">Globally deployed commodities trading platform.</p>
         <p>
@@ -47,27 +50,28 @@ const earlier = [
     </article>
 
     <article class="case case-flip reveal">
-      <BrowserFrame title="brokeflyer.com">
-        <Image
-          src={brokeflyer}
-          alt="BrokeFlyer: live cheap-flight deals from London, scored and listed as trips you can actually take."
-          width={1280}
-          height={800}
-          loading="lazy"
-        />
-      </BrowserFrame>
-      <div>
+      <div class="media">
+        <BrowserFrame title="brokeflyer.com">
+          <Image
+            src={brokeflyer}
+            alt="BrokeFlyer: live cheap-flight deals from London, scored and listed as trips you can actually take."
+            width={1280}
+            height={800}
+            loading="lazy"
+          />
+        </BrowserFrame>
+      </div>
+      <div class="copy">
         <h3>BrokeFlyer</h3>
         <p class="impact">
-          Not cheaper tickets — the difference between a cheap cell on a chart and a trip you can take on Thursday night.
-          Live at <a href="https://brokeflyer.com" target="_blank" rel="noopener">brokeflyer.com</a>.
+          Not cheaper tickets — a cheap cell on a chart versus a trip you can take on Thursday night.
         </p>
         <p>
-          Google Flights is a price board, not an answer to “when can I go?” BrokeFlyer treats it as a live dataset:
-          explore hundreds of destinations, scrape the price calendar months out, score fares against what that route
-          should cost, then keep only itineraries that fit a real job — leave after 8pm, land before 8am, skip the
-          14-hour layover. We find the trip; booking stays on Google. I designed, shipped and run it. Still being built
-          (watches and “tell me when my trip exists” next), but the engine is live.
+          Google Flights is a price board, not an answer to “when can I go?” BrokeFlyer treats it as a live
+          dataset: score fares against what that route should cost, then keep only itineraries that fit a
+          real job. We find the trip; booking stays on Google.
+          Live at <a href="https://brokeflyer.com" target="_blank" rel="noopener">brokeflyer.com</a> —
+          still being built, but the engine is live.
         </p>
         <ul class="pills">
           <li>Founder-built</li>
@@ -77,21 +81,32 @@ const earlier = [
       </div>
     </article>
 
-    <article class="card case-text reveal">
-      <h3>Virtuetech — AI financial-products platform</h3>
-      <p class="impact">Natural-language querying over structured financial data.</p>
-      <p>
-        Conversational grid customisation, product and trade lifecycle, a Node/Express BFF, and RAG
-        so users can ask for what they need in plain language.
-      </p>
-      <ul class="pills">
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>AG Grid</li>
-        <li>Node BFF</li>
-        <li>Elasticsearch</li>
-        <li>RAG</li>
-      </ul>
+    <article class="case reveal">
+      <div class="media media-scene">
+        <Image
+          src={virtuetech}
+          alt="Generic Virtuetech product mock: desktop catalogue of structured notes with a natural-language search, and the same app on a phone."
+          width={1280}
+          height={720}
+          loading="lazy"
+        />
+      </div>
+      <div class="copy">
+        <h3>Virtuetech</h3>
+        <p class="impact">AI financial-products platform — natural-language querying over structured data.</p>
+        <p>
+          Conversational grid customisation, product and trade lifecycle, a Node/Express BFF, and RAG
+          so users can ask for what they need in plain language.
+        </p>
+        <ul class="pills">
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>AG Grid</li>
+          <li>Node BFF</li>
+          <li>Elasticsearch</li>
+          <li>RAG</li>
+        </ul>
+      </div>
     </article>
 
     <div class="earlier">
@@ -100,7 +115,7 @@ const earlier = [
         {
           earlier.map((item) => (
             <figure>
-              <Image src={item.src} alt={item.alt} width={487} height={512} loading="lazy" />
+              <Image src={item.src} alt={item.alt} width={640} height={400} loading="lazy" />
               <figcaption>{item.caption}</figcaption>
             </figure>
           ))
@@ -117,31 +132,59 @@ const earlier = [
 <style>
   .case {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
     align-items: center;
   }
 
-  .case-text {
-    margin-top: 1.25rem;
+  .media {
+    min-width: 0;
+    aspect-ratio: 16 / 10;
   }
 
-  .case a {
+  .media :global(.browser) {
+    height: 100%;
+  }
+
+  .media-scene {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #eef1f6;
+    border: 1px solid var(--line);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.06),
+      0 18px 40px rgba(11, 18, 32, 0.12);
+  }
+
+  .media-scene :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .copy h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .copy p {
+    margin-bottom: 0.75rem;
+  }
+
+  .copy a {
     color: var(--accent);
     font-weight: 700;
     text-decoration: none;
   }
 
-  .case a:hover {
+  .copy a:hover {
     text-decoration: underline;
   }
 
-  h3 {
-    font-size: 1.35rem;
-  }
-
   .earlier {
-    margin-top: 2.5rem;
+    margin-top: 2.75rem;
   }
 
   .earlier > p {
@@ -159,17 +202,19 @@ const earlier = [
     margin: 0;
     min-width: 0;
     position: relative;
-  }
-
-  figure img {
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    object-position: top;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
     border-radius: 10px;
     border: 1px solid var(--line);
+  }
+
+  figure :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
     filter: grayscale(0.4);
-    opacity: 0.8;
+    opacity: 0.85;
     transition: filter 160ms ease, opacity 160ms ease;
   }
 
@@ -188,8 +233,8 @@ const earlier = [
     transition: opacity 160ms ease;
   }
 
-  figure:hover img,
-  figure:focus-within img {
+  figure:hover :global(img),
+  figure:focus-within :global(img) {
     filter: none;
     opacity: 1;
   }
@@ -199,25 +244,18 @@ const earlier = [
     opacity: 1;
   }
 
-  @media (min-width: 720px) {
+  @media (min-width: 800px) {
     .case {
-      grid-template-columns: 1.25fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2rem;
     }
 
-    .case-flip {
-      grid-template-columns: 1fr 1.25fr;
-    }
-
-    .case-flip > :first-child {
+    .case-flip > .media {
       order: 2;
     }
 
     .scroller {
       grid-template-columns: repeat(3, 1fr);
-    }
-
-    figure img {
-      height: 11.5rem;
     }
   }
 </style>
