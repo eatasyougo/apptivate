@@ -2,7 +2,7 @@
 
 Marketing site for Apptivate Ltd — fractional CTO and product build for UK startups.
 
-Live preview: https://eatasyougo.github.io/apptivate/
+Live: https://apptivate.uk/
 
 ```bash
 npm install
