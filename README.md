@@ -9,4 +9,4 @@ npm install
 npm run dev
 ```
 
-See `BUILD_SPEC.md` for the full brief. Remaining placeholders: `{{FORM_ENDPOINT}}`, `{{COMPANY_NUMBER}}`.
+See `BUILD_SPEC.md` for the full brief. Remaining placeholder: `{{COMPANY_NUMBER}}`.

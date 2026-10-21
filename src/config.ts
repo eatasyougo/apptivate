@@ -7,7 +7,7 @@ export const siteConfig = {
     "Senior engineering leadership for UK startups: fractional CTO, AI/LLM integration, and a cost-effective Chennai delivery team led from London.",
   bookingUrl: "https://calendly.com/ajayprabsp",
   contactEmail: "info@apptivate.uk",
-  formEndpoint: "{{FORM_ENDPOINT}}",
+  formEndpoint: "https://formspree.io/f/mjygnjbl",
   companyNumber: "{{COMPANY_NUMBER}}",
   canonical: "https://apptivate.uk/",
 } as const;
