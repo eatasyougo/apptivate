@@ -1,0 +1,45 @@
+---
+const services = [
+  {
+    title: "Fractional CTO & Technical Advisory",
+    body: "Architecture, tech strategy, hiring, code and vendor review, and de-risking your roadmap.",
+  },
+  {
+    title: "MVP & Product Build",
+    body: "From idea to shipped product, built by a focused delivery team with senior oversight.",
+  },
+  {
+    title: "AI & LLM Integration",
+    body: "Practical AI: natural-language querying, RAG, conversational UI, and LLM features that actually ship.",
+  },
+  {
+    title: "Team Augmentation",
+    body: "A cost-effective Chennai-based engineering team, led and quality-controlled from the UK.",
+  },
+];
+---
+
+<section class="section" id="services">
+  <div class="container">
+    <p class="eyebrow">Services</p>
+    <h2>How Apptivate helps</h2>
+    <p>UK-based senior leadership, with hands to build — without a London agency price tag.</p>
+    <div class="grid-4" style="margin-top: 2rem;">
+      {
+        services.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Intro call",
+    body: "A free 30-minute call to understand where you are and what you need.",
+  },
+  {
+    n: "02",
+    title: "Plan",
+    body: "A clear technical plan, scope and estimate. No jargon.",
+  },
+  {
+    n: "03",
+    title: "Build & guide",
+    body: "The UK-led, Chennai-delivered team builds it; you get senior oversight throughout.",
+  },
+];
+---
+
+<section class="section section--surface" id="how">
+  <div class="container">
+    <p class="eyebrow">Engagement</p>
+    <h2>How it works</h2>
+    <div class="grid-3" style="margin-top: 2rem;">
+      {
+        steps.map((step) => (
+          <article class="card">
+            <span class="n">{step.n}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .n {
+    display: block;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+</style>

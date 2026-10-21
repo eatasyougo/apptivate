@@ -1,0 +1,13 @@
+// TODO: replace placeholder tokens before go-live (see BUILD_SPEC.md §13).
+export const siteConfig = {
+  name: "Apptivate",
+  legalName: "Apptivate Ltd",
+  title: "Apptivate — Fractional CTO & product build for UK startups",
+  description:
+    "Senior engineering leadership for UK startups: fractional CTO, AI/LLM integration, and a cost-effective Chennai delivery team led from London.",
+  bookingUrl: "{{BOOKING_URL}}",
+  contactEmail: "{{CONTACT_EMAIL}}",
+  formEndpoint: "{{FORM_ENDPOINT}}",
+  companyNumber: "{{COMPANY_NUMBER}}",
+  canonical: "https://apptivate.uk/",
+} as const;

@@ -1,0 +1,47 @@
+<section class="section section--surface" id="about">
+  <div class="container about">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Ajay Prince</h2>
+      <p>
+        I've spent 20 years building trading, risk and investment systems at BNP Paribas, Man Group
+        and Citi — including a VP role on Citi Velocity — and I now work on AI-enabled financial
+        products at Virtuetech. I founded Apptivate Ltd in 2015 to give growing teams access to that
+        same senior engineering judgement without hiring a full-time CTO in London.
+      </p>
+      <p>
+        I'm based in London and work full-stack across React and TypeScript, .NET and C#, Node, and
+        hands-on AI and LLM integration. Delivery is led from the UK and built with a trusted team
+        in Chennai, so you get senior direction and a cost-effective build.
+      </p>
+    </div>
+    <div class="photo" aria-hidden="true">
+      <span>Photo to follow</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .photo {
+    min-height: 14rem;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 720px) {
+    .about {
+      grid-template-columns: 1.6fr 0.8fr;
+      align-items: start;
+    }
+  }
+</style>

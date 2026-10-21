@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import { siteConfig } from "../config";
+import velocity from "../assets/work/velocity.png";
+---
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Apptivate · London</p>
+      <h1>Senior engineering leadership for startups — plus a team to build it.</h1>
+      <p class="lead">
+        I'm Ajay Prince. I've spent 20 years building trading and risk systems for banks like Citi,
+        Man Group and BNP Paribas. Apptivate gives early-stage founders that same senior guidance —
+        as your fractional CTO and technical partner — backed by a cost-effective delivery team.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={siteConfig.bookingUrl} target="_blank" rel="noopener">Book a free intro call</a>
+        <a class="btn btn-secondary on-dark" href="#how">See how I work</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="false">
+      <Image
+        src={velocity}
+        alt="Citi Velocity trading platform with live FX prices, charts and order blotters."
+        width={975}
+        height={652}
+        loading="eager"
+        class="hero-shot"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 4rem 0 3.5rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    max-width: 40rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-shot {
+    border-radius: 12px;
+    transform: rotate(-2deg);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      padding: 6rem 0 5rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .hero-visual {
+      display: block;
+    }
+  }
+</style>

@@ -1,0 +1,160 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section class="section" id="contact">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h2>Let’s talk</h2>
+    <p>A free intro call is the fastest way to see if we’re a fit. Or send a short note.</p>
+
+    <div class="grid-2" style="margin-top: 2rem;">
+      <article class="card">
+        <h3>Book a call</h3>
+        <p>Thirty minutes. No pitch deck. We’ll talk about where you are and what you need.</p>
+        <a class="btn btn-primary" href={siteConfig.bookingUrl} target="_blank" rel="noopener">Book a free intro call</a>
+        <p class="fallback">
+          Or email <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Send a message</h3>
+        <form id="contact-form" action={siteConfig.formEndpoint} method="POST">
+          <label>
+            Name
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            Company <span class="opt">(optional)</span>
+            <input type="text" name="company" autocomplete="organization" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <label class="hp" aria-hidden="true">
+            Website
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </label>
+          <label class="consent">
+            <input type="checkbox" name="consent" required />
+            I consent to Apptivate storing my details to respond to this enquiry.
+          </label>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-status" role="status" hidden></p>
+        </form>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector("#contact-form") as HTMLFormElement | null;
+  const status = document.querySelector(".form-status") as HTMLParagraphElement | null;
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const honeypot = (form.querySelector('[name="_gotcha"]') as HTMLInputElement | null)?.value;
+    if (honeypot) return;
+
+    const action = form.getAttribute("action") ?? "";
+    if (action.includes("{{")) {
+      if (status) {
+        status.hidden = false;
+        status.textContent = "The form endpoint is not configured yet. Please use the booking link or email.";
+      }
+      return;
+    }
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!response.ok) throw new Error("Request failed");
+      form.reset();
+      if (status) {
+        status.hidden = false;
+        status.textContent = "Thanks — I’ll get back to you shortly.";
+      }
+    } catch {
+      if (status) {
+        status.hidden = false;
+        status.textContent = "Something went wrong. Please try again or email instead.";
+      }
+    }
+  });
+</script>
+
+<style>
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  form {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--paper);
+  }
+
+  .consent {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .consent input {
+    margin-top: 0.25rem;
+  }
+
+  .opt {
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .fallback {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .fallback a {
+    color: var(--accent);
+  }
+
+  .form-status {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+</style>

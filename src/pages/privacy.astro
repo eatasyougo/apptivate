@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { siteConfig } from "../config";
+---
+
+<Base title="Privacy — Apptivate" description="Privacy notice for Apptivate Ltd.">
+  <Nav />
+  <main class="section">
+    <div class="container">
+      <h1>Privacy</h1>
+      <p>
+        This is a stub notice for v1. {siteConfig.legalName} will collect only the details you send
+        through the contact form or booking link, and will use them solely to respond to your enquiry.
+        Final UK GDPR wording will replace this page before go-live.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Base>

@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import velocity from "../assets/work/velocity.png";
+import icelandTours from "../assets/work/iceland-tours.png";
+import designtorget from "../assets/work/designtorget.png";
+import ecshopping from "../assets/work/ecshopping.png";
+---
+
+<section class="section" id="work">
+  <div class="container">
+    <p class="eyebrow">Portfolio</p>
+    <h2>Selected work</h2>
+
+    <article class="card case">
+      <Image
+        src={velocity}
+        alt="Citi Velocity: FX prices, liquidity heatmaps, charts and an order blotter."
+        width={975}
+        height={652}
+        loading="lazy"
+      />
+      <div>
+        <h3>Citi Velocity</h3>
+        <p>
+          A globally deployed commodities and FX trading platform. I contributed to migrating the
+          client-facing desktop/web hybrid to a pure web application using React, Recoil, WAMP and Python.
+        </p>
+      </div>
+    </article>
+
+    <article class="card case-text">
+      <h3>Virtuetech — AI financial-products platform</h3>
+      <p>
+        Natural-language querying and conversational grid customisation over structured financial data.
+        React, TypeScript, MUI and AG Grid on the front end; a Node/Express BFF; Elasticsearch and RAG
+        to connect user intent with product, trade and lifecycle data.
+      </p>
+    </article>
+
+    <div class="earlier">
+      <p>20 years of delivery — selected earlier web &amp; e-commerce work</p>
+      <div class="thumbs">
+        <Image src={icelandTours} alt="Iceland Tours booking website" width={487} height={512} loading="lazy" />
+        <Image src={designtorget} alt="DesignTorget product page" width={483} height={663} loading="lazy" />
+        <Image src={ecshopping} alt="Icelandic e-commerce product page" width={487} height={598} loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .case {
+    display: grid;
+    gap: 1.25rem;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .case img {
+    width: 100%;
+    height: auto;
+  }
+
+  .case > div,
+  .case-text {
+    padding: 1.5rem;
+  }
+
+  .case-text {
+    margin-top: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  .earlier {
+    margin-top: 2.5rem;
+  }
+
+  .earlier p {
+    font-size: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    opacity: 0.72;
+  }
+
+  .thumbs img {
+    width: 100%;
+    height: 7.5rem;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    filter: grayscale(0.35);
+  }
+
+  @media (min-width: 720px) {
+    .case {
+      grid-template-columns: 1.3fr 1fr;
+      align-items: center;
+    }
+  }
+</style>

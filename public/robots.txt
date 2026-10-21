@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eatasyougo.github.io/apptivate/sitemap-index.xml
