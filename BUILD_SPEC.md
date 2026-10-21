@@ -5,6 +5,9 @@ so a smaller model (or junior dev) can build the whole thing without further dec
 real-world value is still missing (email address, booking URL, company number), it is listed in
 **§13 Placeholders** — use the placeholder token exactly as written and do not invent values.
 
+> **Visual polish:** see `DESIGN_ENHANCEMENTS.md` for prioritised ideas to make the site more
+> appealing (typography, hero depth, testimonials, CTAs, motion). Those are additive to this spec.
+
 ---
 
 ## 1. Goal & audience
