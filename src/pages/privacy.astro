@@ -5,15 +5,126 @@ import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 ---
 
-<Base title="Privacy — Apptivate" description="Privacy notice for Apptivate Ltd.">
+<Base title="Privacy — Apptivate" description="Privacy notice for Apptivate Limited.">
   <Nav />
   <main class="section">
-    <div class="container">
-      <h1>Privacy</h1>
+    <div class="container legal">
+      <h1>Privacy notice</h1>
+      <p class="updated">Last updated: 22 October 2026</p>
+
       <p>
-        This is a stub notice for v1. {siteConfig.legalName} will collect only the details you send
-        through the contact form or booking link, and will use them solely to respond to your enquiry.
-        Final UK GDPR wording will replace this page before go-live.
+        This notice explains how {siteConfig.legalName} (“Apptivate”, “we”, “us”) handles personal data
+        when you use <a href={siteConfig.canonical}>apptivate.uk</a>, email us, send the contact form, or
+        book a call. It is written for a small UK company. It is not legal advice.
+      </p>
+
+      <h2>Who is responsible</h2>
+      <p>
+        The data controller is {siteConfig.legalName}, company number {siteConfig.companyNumber},
+        registered in England and Wales. Registered office: {siteConfig.registeredOffice}.
+      </p>
+      <p>
+        Contact: <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+      </p>
+
+      <h2>What we collect</h2>
+      <p>We only collect what we need to reply and, if we work together, to deliver the work:</p>
+      <ul>
+        <li>
+          <strong>Contact form:</strong> name, email, company (if you give it), message, and the consent
+          tick. The form is processed by Formspree.
+        </li>
+        <li>
+          <strong>Email:</strong> whatever you send to {siteConfig.contactEmail}, including any attachments.
+        </li>
+        <li>
+          <strong>Booking:</strong> if you use Calendly, they collect your name, email and meeting details
+          so we can hold the call. That happens on Calendly’s site under their terms.
+        </li>
+        <li>
+          <strong>Hosting logs:</strong> this site is a static site on GitHub Pages. The host may log
+          technical data such as IP address, browser type and pages requested, for security and to serve
+          the site.
+        </li>
+      </ul>
+      <p>
+        We do not run advertising or analytics tags on this website. We do not buy marketing lists or
+        sell your details.
+      </p>
+
+      <h2>Why we use it</h2>
+      <ul>
+        <li>
+          To answer an enquiry or book a call — legitimate interests, and consent where you tick the form
+          box (UK GDPR Articles 6(1)(f) and 6(1)(a)).
+        </li>
+        <li>
+          To provide services, invoicing and support if you become a client — contract (Article 6(1)(b)).
+        </li>
+        <li>
+          To keep records we are required to keep — legal obligation (Article 6(1)(c)).
+        </li>
+      </ul>
+
+      <h2>Who we share it with</h2>
+      <p>
+        We share personal data only as needed to run the business. Typical recipients:
+      </p>
+      <ul>
+        <li>Formspree, for the contact form</li>
+        <li>Calendly, if you book a call through their link</li>
+        <li>GitHub, which hosts this website</li>
+        <li>Our email and office providers</li>
+        <li>
+          Our delivery team in Chennai, India, where we need them to quote or do the work, acting on our
+          instructions
+        </li>
+        <li>Professional advisers, insurers, or authorities if the law requires it</li>
+      </ul>
+      <p>
+        Some of those organisations are outside the UK. Where that happens, we rely on an adequacy
+        decision or other safeguards they publish (for example standard contractual clauses).
+      </p>
+
+      <h2>How long we keep it</h2>
+      <p>
+        Enquiry and booking details are kept only as long as we need them to respond and follow up —
+        usually up to 24 months if we do not start work, unless you ask us to delete them sooner. If you
+        become a client, we keep records for the life of the engagement and for a reasonable period
+        afterwards (typically up to six years) for tax, accounting and legal reasons.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>Under UK GDPR you can ask us to:</p>
+      <ul>
+        <li>access the personal data we hold about you</li>
+        <li>correct it if it is wrong</li>
+        <li>erase it, or restrict or object to how we use it</li>
+        <li>receive a copy in a portable format, where that right applies</li>
+        <li>withdraw consent, where we rely on consent — that does not affect use before you withdraw</li>
+      </ul>
+      <p>
+        Email <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>. You also have
+        the right to complain to the Information Commissioner’s Office at
+        <a href="https://ico.org.uk/" target="_blank" rel="noopener">ico.org.uk</a>.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        We use reputable providers and restrict access to people who need it. No website or email system
+        is completely secure; please do not send passwords or payment card numbers through the contact
+        form.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        See our <a href="/cookies/">cookie notice</a>. This site does not use non-essential cookies.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update this notice from time to time. The date at the top is the latest version. If we
+        make a material change, we will update this page.
       </p>
     </div>
   </main>

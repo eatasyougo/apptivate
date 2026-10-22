@@ -2,16 +2,60 @@
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { siteConfig } from "../config";
 ---
 
-<Base title="Cookies — Apptivate" description="Cookie notice for Apptivate Ltd.">
+<Base title="Cookies — Apptivate" description="Cookie notice for Apptivate Limited.">
   <Nav />
   <main class="section">
-    <div class="container">
-      <h1>Cookies</h1>
+    <div class="container legal">
+      <h1>Cookie notice</h1>
+      <p class="updated">Last updated: 22 October 2026</p>
+
       <p>
-        This site does not use analytics or advertising cookies. Essential cookies, if any, are limited
-        to what the host needs to serve the pages. This notice will be finalised before go-live.
+        This notice explains how {siteConfig.legalName} uses cookies and similar technologies on
+        <a href={siteConfig.canonical}>apptivate.uk</a>. It should be read with our
+        <a href="/privacy/">privacy notice</a>.
+      </p>
+
+      <h2>What we use</h2>
+      <p>
+        This website is a static site. We do not set advertising cookies, we do not run a cookie banner
+        for tracking, and we do not use Google Analytics or similar tools on these pages.
+      </p>
+      <p>
+        Fonts are hosted with the site, so your browser does not fetch them from a third-party font
+        service.
+      </p>
+      <p>
+        Our host (GitHub Pages) may process technical logs and set cookies that are strictly necessary
+        to deliver the site securely. We do not control those server logs.
+      </p>
+
+      <h2>Third-party services you choose to use</h2>
+      <p>
+        If you book a call, you leave this site and use Calendly. Calendly sets its own cookies and
+        processes your details under
+        <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">its privacy notice</a>.
+      </p>
+      <p>
+        If you send the contact form, the request goes to Formspree. Formspree may set cookies on its
+        own domain and processes the message under the privacy terms published on
+        <a href="https://formspree.io/" target="_blank" rel="noopener">formspree.io</a>.
+      </p>
+      <p>
+        Those cookies are not set by us on apptivate.uk. We recommend you only use those services if you
+        are comfortable with their notices.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can block or delete cookies in your browser settings. Blocking all cookies may stop some
+        third-party booking or form pages from working. Because we do not use non-essential cookies on
+        this site, UK PECR does not require a consent banner here.
+      </p>
+      <p>
+        Questions: <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
       </p>
     </div>
   </main>

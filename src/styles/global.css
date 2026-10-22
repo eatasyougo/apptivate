@@ -80,6 +80,45 @@ p {
   scroll-margin-top: calc(var(--nav-h) + 0.75rem);
 }
 
+.legal {
+  max-width: 42rem;
+}
+
+.legal h1 {
+  font-size: clamp(2rem, 3vw + 1rem, 2.6rem);
+}
+
+.legal .updated {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal h2 {
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.legal li {
+  margin-bottom: 0.35rem;
+}
+
+.legal a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 720px) {
   .section {
     padding: 5rem 0;
