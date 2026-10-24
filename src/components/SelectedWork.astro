@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { siteConfig } from "../config";
 import velocity from "../assets/work/velocity.png";
 import brokeflyer from "../assets/work/brokeflyer.png";
-import virtuetech from "../assets/work/virtuetech.jpg";
+import marexProducts from "../assets/work/marex-products.jpg";
 import BrowserFrame from "./BrowserFrame.astro";
 ---
 
@@ -75,19 +75,20 @@ import BrowserFrame from "./BrowserFrame.astro";
     <article class="case reveal">
       <div class="media media-scene">
         <Image
-          src={virtuetech}
-          alt="Generic Virtuetech product mock: desktop catalogue of structured notes with a natural-language search, and the same app on a phone."
+          src={marexProducts}
+          alt="Generic desktop mock of an internal financial-products web app: catalogue grid and natural-language search."
           width={1280}
           height={720}
           loading="lazy"
         />
       </div>
       <div class="copy">
-        <h3>Virtuetech</h3>
-        <p class="impact">AI financial-products platform — natural-language querying over structured data.</p>
+        <h3>Marex</h3>
+        <p class="impact">Internal financial-products web app — via Virtuetech.</p>
         <p>
-          Conversational grid customisation, product and trade lifecycle, a Node/Express BFF, and RAG
-          so users can ask for what they need in plain language.
+          Natural-language querying over structured data, conversational grid customisation, product
+          and trade lifecycle, a Node/Express BFF, and RAG. Internal desktop web app — not a mobile
+          product.
         </p>
         <ul class="pills">
           <li>React</li>
